@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         runners:
-          - self-hosted
+          # - self-hosted
           - ubuntu-latest
           - windows-latest
         flutter-version:
