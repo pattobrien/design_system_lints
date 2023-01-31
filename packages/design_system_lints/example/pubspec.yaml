@@ -1,0 +1,20 @@
+name: example
+description: A sample command-line application.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  design_system_annotations: ^0.1.0-dev.2
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.1.3
+  path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  design_system_lints:
+    path: ../
+  sidecar: ^0.1.0-dev.21

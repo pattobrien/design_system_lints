@@ -1,0 +1,9 @@
+# targets:
+#   $default:
+#     builders:
+#       reflectable:
+#         generate_for:
+#           - lib/reflector.dart
+#           - lib/flutter.dart
+#         options:
+#           formatted: true

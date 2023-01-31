@@ -1,0 +1,17 @@
+includes:
+  - "lib/**.dart"
+
+lints:
+  design_system_lints:
+    rules:
+      icon:
+      box_constraints:
+      text_style:
+      radius:
+      box_shadow:
+      edge_insets:
+      color:
+      theme_data:
+        # severity for each rule can be set to
+        # either: info, warning, or error
+        severity: info

@@ -1,0 +1,14 @@
+includes:
+  - "lib/**/**.dart"
+
+lints:
+  sidecar_lints:
+    rules:
+      missing_visit_method_registration:
+      rule_not_declared:
+
+assists:
+  sidecar_lints:
+    rules:
+      output_ast_node_tree:
+      output_source_span:

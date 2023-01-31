@@ -1,0 +1,13 @@
+name: design_system_annotations
+description: >
+  Annotations to be used with design_system_lints
+version: 0.1.0-dev.2
+repository: https://github.com/pattobrien/lints/tree/main/packages/design_system_annotations
+homepage: https://github.com/pattobrien/lints/tree/main/packages/design_system_annotations
+issue_tracker: https://github.com/pattobrien/lints/issues
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dev_dependencies:
+  lints: ^2.0.0

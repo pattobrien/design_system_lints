@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Sidecar Lint Debugger (example)",
+            "program": "example/.dart_tool/sidecar/debug.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--enable-vm-service",
+                "--debug",
+            ]
+        },
+        {
+            "name": "Sidecar Lint Debugger (lint package)",
+            "program": ".dart_tool/sidecar/debug.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--enable-vm-service",
+                "--debug",
+            ]
+        },
+    ],
+}

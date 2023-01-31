@@ -1,0 +1,9 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  plugins:
+    - sidecar
+
+linter:
+  rules:
+    # use_colored_box: true
