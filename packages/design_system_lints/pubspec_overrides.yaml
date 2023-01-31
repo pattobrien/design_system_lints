@@ -1,7 +1,0 @@
-dependency_overrides:
-  sidecar_lints:
-    path: /Users/pattobrien/Development/sidecar/packages/sidecar_lints/
-  sidecar:
-    path: /Users/pattobrien/Development/sidecar/packages/sidecar/
-#   sidecar_package_utilities:
-#     path: /Users/pattobrien/Development/sidecar/packages/sidecar_package_utilities/
