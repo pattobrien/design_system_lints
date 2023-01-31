@@ -36,7 +36,7 @@ class MyColorWidget extends StatelessWidget {
     return Container(color: MyColors.myBlue);
   }
 }
-''', [ExpectedText('myBlue'), ExpectedText('MyColors.myBlue')]);
+''', [ExpectedText('Colors.blue'), ExpectedText('MyColors.myBlue')]);
 
     // The field 'myColor' should be protected by default
     // and a lint should appear if we attempt to assign
@@ -158,7 +158,7 @@ import 'package:flutter/material.dart';
 class MyTheme {
   static final red = Colors.red;
 }
-''', [ExpectedText('red')]);
+''', [ExpectedText('Colors.red')]);
 
     ruleTest('Theme property invocation', '''
 import 'package:flutter/material.dart';

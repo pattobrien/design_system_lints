@@ -18,17 +18,17 @@ abstract class GenericDesignRule extends LintRule {
   @override
   void visitTopLevelVariableDeclaration(TopLevelVariableDeclaration node) {
     for (final variable in node.variables.variables) {
-      final type = variable.declaredElement2?.type;
+      final type = variable.declaredElement?.type;
       if (!checker(type)) continue;
-      visitExpression(variable.name);
+      visitExpression(variable.initializer);
     }
   }
 
   @override
   void visitFieldDeclaration(FieldDeclaration node) {
     for (final v in node.fields.variables) {
-      if (!checker(v.declaredElement2?.type)) continue;
-      visitExpression(v.name);
+      if (!checker(v.declaredElement?.type)) continue;
+      visitExpression(v.initializer);
     }
   }
 

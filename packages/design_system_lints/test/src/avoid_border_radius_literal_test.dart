@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 final myRadius = Radius.circular(10.0);
 ''', [
-      ExpectedText('myRadius'),
+      ExpectedText('Radius.circular(10.0)'),
     ]);
 
     ruleTest('design system', '''

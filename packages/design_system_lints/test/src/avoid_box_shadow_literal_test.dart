@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 final myShadow = BoxShadow();
 ''', [
-      ExpectedText('myShadow'),
+      ExpectedText('BoxShadow()'),
     ]);
 
     ruleTest('no design system', '''
