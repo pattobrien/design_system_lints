@@ -1,3 +1,7 @@
+## 0.1.0
+
+- feat: beta release
+
 ## 0.1.0-dev.12
 
 - feat: Covered all use cases
