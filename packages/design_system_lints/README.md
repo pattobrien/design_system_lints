@@ -1,8 +1,13 @@
+# Design System Lints
 
+<a href="https://github.com/pattobrien/design_system_lints/actions"><img src="https://github.com/pattobrien/design_system_lints/workflows/Build/badge.svg" alt="Build Status"></a>
+<a href="https://codecov.io/gh/design_system_lints/sidecar"><img src="https://codecov.io/gh/pattobrien/design_system_lints/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+[![pub package](https://img.shields.io/pub/v/design_system_lints.svg)](https://pub.dev/packages/design_system_lints)
 
 A collection of lints and code edits enforcing UI standards throughout a codebase. 
 
-> This analyzer rule package was built using [Sidecar](https://pub.dev/packages/sidecar) 
+> An analyzer rule package built using [Sidecar](https://pub.dev/packages/sidecar) 
 
 ## Overview
 
@@ -10,7 +15,7 @@ As a project scales, UI consistency becomes more difficult to maintain if a cent
 
 The concept of a design system is simple: define the basic UI building blocks for your product or brand in one central location, and reference them from anywhere in your codebase. By sticking to a system, clients or designers can maintain visual styles in one place, making it effortless for developers to implement beautiful UIs throughout the application.
 
-For more info on the benefits of using a design system, take a look at [this great article by supernova.io](https://www.supernova.io/blog/what-is-a-design-system), a design system service built with Flutter.
+For more info on the benefits of using a design system, take a look at [this great article by supernova.io](https://www.supernova.io/blog/what-is-a-design-system), a design system app built with Flutter.
 
 ## Available Rules
 ```yaml
@@ -123,6 +128,7 @@ The package [`design_system_annotations`](https://pub.dev/packages/design_system
 
 ```dart
 import 'package:design_system_annotations/design_system_annotations.dart';
+import 'package:flutter/material.dart';
 
 // create your design system values
 // the below values happen to follow the concept of an 8pt scale
@@ -130,7 +136,7 @@ import 'package:design_system_annotations/design_system_annotations.dart';
 @designSystem
 class DesignSystem {
   static const xsmall = 2.0;
-  static const small = 4.0
+  static const small = 4.0;
   static const medium = 8.0;
   static const large = 12.0;
   static const xlarge = 16.0;
@@ -144,6 +150,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: DesignSystem.primary, // no lint
       padding: EdgeInsets.all(DesignSystem.large), // no lint
     );
   }
