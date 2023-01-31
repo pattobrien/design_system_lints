@@ -1,0 +1,70 @@
+name: Build
+
+on:
+  pull_request:
+    paths-ignore:
+      - "**.md"
+  push:
+    branches:
+      - master
+      - "refactor/**"
+    paths-ignore:
+      - "**.md"
+
+jobs:
+  build:
+    runs-on: ${{ matrix.runners }}
+
+    defaults:
+      run:
+        working-directory: ${{ matrix.package_path }}
+
+    strategy:
+      matrix:
+        runners:
+          - self-hosted
+          - ubuntu-latest
+          - windows-latest
+        flutter-version:
+          - "3.0.5"
+          - "3.3.9"
+        package_path:
+          - packages/design_system_lints
+        # channel:
+        #   - stable
+
+    steps:
+      - uses: actions/checkout@v3.1.0
+        with:
+          fetch-depth: 2
+
+      - uses: subosito/flutter-action@v2.8.0
+        with:
+          channel: stable
+          flutter-version: ${{ matrix.flutter-version }}
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: install coverage
+        run: dart pub global activate coverage
+
+      - name: Run tests
+        run: dart test --coverage="coverage"
+
+      - name: Format code coverage
+        run: dart pub global run coverage:format_coverage --packages=.dart_tool/package_config.json --report-on=lib --lcov --check-ignore -o ./coverage/lcov.info -i ./coverage
+
+      # - name: Remove ignored files
+      #   run: lcov --remove coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' -o coverage/lcov.info
+
+      - name: Check Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v2.1.0
+        with:
+          path: ${{ matrix.package_path }}/coverage/lcov.info
+          min_coverage: 15
+          exclude: "**/*.g.dart **/*.freezed.dart"
+
+      - name: Upload coverage to codecov
+        uses: codecov/codecov-action@v3.1.1
