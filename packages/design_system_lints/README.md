@@ -51,10 +51,10 @@ lints:
 name: example_app
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
 
 dependencies:
-  design_system_annotations: ^0.1.0-dev.2
+  design_system_annotations: ^0.1.0
   flutter:
     sdk: flutter
 
