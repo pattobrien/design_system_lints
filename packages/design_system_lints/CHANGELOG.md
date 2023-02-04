@@ -1,11 +1,15 @@
+## 0.1.2
+
+- fix: GoogleFonts false negative (MethodInvocation expressions)
+
 ## 0.1.1
 
 - chore: Upgrade sidecar and analyzer to latest major version
 - fix: Remove deprecated references
+
 ## 0.1.0
 
 - feat: beta release
-
 
 ## 0.1.0-dev.12
 

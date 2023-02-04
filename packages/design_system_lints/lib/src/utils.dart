@@ -78,6 +78,9 @@ Iterable<Expression> nonDesignSystemExpressions(CollectionElement? exp) sync* {
       if (hasAnnotatedProperty(staticElement)) yield exp;
     }
   }
+  if (exp is MethodInvocation) {
+    if (hasAnnotatedProperty(exp.methodName.staticElement)) yield exp;
+  }
   if (exp is PropertyAccess) {
     final staticElement = exp.propertyName.staticElement?.nonSynthetic;
     if (hasAnnotatedProperty(staticElement)) yield exp;
